@@ -46,7 +46,7 @@ const FeaturesSection = () => {
       stats: { savings: "₹3.2K avg", overspend: "-68%" },
       gridClass: "md:col-span-1 md:row-span-1"
     },
-    
+
     // Row 2: Small + Wide
     {
       id: "voice-memo",
@@ -68,7 +68,7 @@ const FeaturesSection = () => {
       stats: { engagement: "85%", habits: "↑47%" },
       gridClass: "md:col-span-2 md:row-span-1"
     },
-    
+
     // Row 3: Wide + Small
     {
       id: "upi-intelligence",

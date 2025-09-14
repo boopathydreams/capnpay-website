@@ -192,10 +192,12 @@ const HeroSection = () => {
                       <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center p-1">
                         <Image
                           src="/images/icon.png"
-                          alt="Cap'n Pay Logo"
+                          alt="Cap'n Pay logo - AI-native payment app"
                           width={20}
                           height={20}
                           className="w-full h-full object-contain"
+                          priority
+                          loading="eager"
                         />
                       </div>
                       <span className="font-bold text-gray-800">Cap&apos;n Pay</span>
@@ -228,10 +230,11 @@ const HeroSection = () => {
                     >
                       <Image
                         src="/images/girl_seeing_phone.svg"
-                        alt="Girl with phone"
+                        alt="Girl using smartphone - demonstrating Cap'n Pay mobile interface"
                         width={160}
                         height={160}
                         className="transform"
+                        loading="lazy"
                       />
                     </motion.div>                    <div className="relative z-10">
                       <div className="text-green-700 text-xs font-bold uppercase tracking-wider mb-1">
