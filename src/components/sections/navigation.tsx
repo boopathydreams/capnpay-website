@@ -11,21 +11,52 @@ import { cn } from '@/lib/utils'
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
     }
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const navItems = [
     { name: 'Features', href: '#features', icon: Zap },
-    { name: 'AI Insights', href: '#ai', icon: Brain },
-    { name: 'Security', href: '#security', icon: Shield },
-    { name: 'Mobile App', href: '#app', icon: Smartphone },
+    { name: 'How It Works', href: '#how-it-works', icon: Brain },
+    { name: 'Testimonials', href: '#testimonials', icon: Shield },
+    { name: 'Pricing', href: '#pricing', icon: Smartphone },
   ]
+
+  const scrollToSection = (href: string) => {
+    if (!mounted) return
+
+    const targetId = href.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+
+    if (targetElement) {
+      const headerOffset = 80 // Account for fixed header height
+      const elementPosition = targetElement.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  const scrollToTop = () => {
+    if (!mounted) return
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 
   return (
     <motion.nav
@@ -33,7 +64,7 @@ const Navigation = () => {
       animate={{ y: 0 }}
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-500",
-        scrolled
+        mounted && scrolled
           ? "bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-lg"
           : "bg-transparent"
       )}
@@ -41,9 +72,10 @@ const Navigation = () => {
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
+            onClick={scrollToTop}
+            className="flex items-center space-x-2 cursor-pointer"
           >
             <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg p-1">
               <Image
@@ -57,22 +89,22 @@ const Navigation = () => {
             <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Cap&apos;n Pay
             </span>
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.button
                 key={item.name}
-                href={item.href}
+                onClick={() => scrollToSection(item.href)}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors duration-200 group"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors duration-200 group cursor-pointer"
               >
                 <item.icon className="w-4 h-4 group-hover:text-blue-600 transition-colors" />
                 <span className="font-medium">{item.name}</span>
-              </motion.a>
+              </motion.button>
             ))}
           </div>
 
@@ -135,18 +167,20 @@ const Navigation = () => {
             <Container>
               <div className="py-6 space-y-4">
                 {navItems.map((item, index) => (
-                  <motion.a
+                  <motion.button
                     key={item.name}
-                    href={item.href}
+                    onClick={() => {
+                      scrollToSection(item.href)
+                      setIsOpen(false)
+                    }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors duration-200 py-2"
+                    className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 cursor-pointer w-full text-left"
                   >
                     <item.icon className="w-5 h-5" />
                     <span className="font-medium">{item.name}</span>
-                  </motion.a>
+                  </motion.button>
                 ))}
                 <div className="flex flex-col space-y-3 pt-4 border-t border-border/50">
                   <Button variant="outline" className="justify-start">

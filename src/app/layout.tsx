@@ -57,10 +57,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Cap'n Pay - AI-Native Payment App",
+        url: "/images/og-image-large.png",
+        width: 1248,
+        height: 832,
+        alt: "Cap'n Pay - India's First AI-Native Payment App - An ultimatum to unhealthy spending",
       },
       {
         url: "/images/icon.png",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     description: "Smart budget caps, safe-to-spend AI, and voice commands. Experience the future of UPI payments in India.",
     creator: "@capnpay",
     site: "@capnpay",
-    images: ["/images/og-image.png"],
+    images: ["/images/og-image-large.png"],
   },
   robots: {
     index: true,

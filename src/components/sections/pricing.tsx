@@ -92,7 +92,7 @@ const PricingSection = () => {
   }
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <section id="pricing" className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-10 blur-3xl" />

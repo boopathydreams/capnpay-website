@@ -56,7 +56,7 @@ const HowItWorksSection = () => {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section id="how-it-works" ref={sectionRef} className="py-20 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20" />

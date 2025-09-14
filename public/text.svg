@@ -1,0 +1,30 @@
+<svg
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="2129px" height="629px">
+<defs>
+<linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(10,61,145)" stop-opacity="1" />
+  <stop offset="58%" stop-color="rgb(10,61,138)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(10,61,130)" stop-opacity="1" />
+</linearGradient>
+<linearGradient id="PSgrad_1" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(0,209,193)" stop-opacity="1" />
+  <stop offset="58%" stop-color="rgb(0,200,184)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(0,190,175)" stop-opacity="1" />
+</linearGradient>
+<linearGradient id="PSgrad_2" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(0,209,220)" stop-opacity="1" />
+  <stop offset="58%" stop-color="rgb(0,200,198)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(0,190,175)" stop-opacity="1" />
+</linearGradient>
+
+</defs>
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 0.93645972687288, 0, 0, 0.93664795509222,0.477602051953, 339.580869286287)" font-size="507.128px"><tspan font-size="507.128px" font-family="Noto Sans" fill="#0A3D91">cap&#8217;n&#32;</tspan><tspan font-size="507.128px" font-family="Noto Sans" fill="#21F2CC">pay</tspan></text>
+<text kerning="auto" font-family="Myriad Pro" fill="url(#PSgrad_0)" transform="matrix( 0.93645972687288, 0, 0, 0.93664795509222,0.477602051953, 339.580869286287)" font-size="507.128px"><tspan font-size="507.128px" font-family="Noto Sans" fill="#0A3D91">cap&#8217;n&#32;</tspan><tspan font-size="507.128px" font-family="Noto Sans" fill="#21F2CC">pay</tspan></text>
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 0.93645972687288, 0, 0, 0.93664795509222,1330.34527893716, 339.604776263031)" font-size="507.128px"><tspan font-size="507.128px" font-family="Noto Sans" fill="#21F2CC">pay</tspan></text>
+<text kerning="auto" font-family="Myriad Pro" fill="url(#PSgrad_1)" transform="matrix( 0.93645972687288, 0, 0, 0.93664795509222,1330.34527893716, 339.604776263031)" font-size="507.128px"><tspan font-size="507.128px" font-family="Noto Sans" fill="#21F2CC">pay</tspan></text>
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 0.93645972687288, 0, 0, 0.93664795509222,797.468878078765, 345.965350441058)" font-size="507.128px"><tspan font-size="507.128px" font-family="Noto Sans" fill="#21F2CC">&#8217;</tspan></text>
+<text kerning="auto" font-family="Myriad Pro" fill="url(#PSgrad_2)" transform="matrix( 0.93645972687288, 0, 0, 0.93664795509222,797.468878078765, 345.965350441058)" font-size="507.128px"><tspan font-size="507.128px" font-family="Noto Sans" fill="#21F2CC">&#8217;</tspan></text>
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 0.93645972687288, 0, 0, 0.93664795509222,127.273047208421, 605.852846832398)" font-size="100px"><tspan font-size="100px" font-family="Noto Sans" fill="#153276">An&#32;ultimatum&#32;to&#32;unhealthy&#32;spending</tspan></text>
+</svg>

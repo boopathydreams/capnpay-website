@@ -43,7 +43,7 @@ const HeroSection = () => {
   ]
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
+    <section id="home" ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
       {/* Background Elements */}
       <motion.div style={{ y, opacity }} className="absolute inset-0">
         <FloatingElement delay={0} duration={6} distance={30} direction="circular" className="absolute top-20 left-20">
@@ -58,6 +58,19 @@ const HeroSection = () => {
       </motion.div>
 
       <Container className="relative z-10">
+        {/* Mobile Badge - Shows at top only on mobile */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="lg:hidden flex justify-center pt-20 pb-8"
+        >
+          <div className="inline-flex items-center space-x-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">
+            <Zap className="w-4 h-4" />
+            <span>India&apos;s First AI-Native Payment App</span>
+          </div>
+        </motion.div>
+
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <motion.div
@@ -66,12 +79,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            {/* Badge */}
+            {/* Badge - Desktop only */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center space-x-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium"
+              className="hidden lg:inline-flex items-center space-x-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium"
             >
               <Zap className="w-4 h-4" />
               <span>India&apos;s First AI-Native Payment App</span>
