@@ -28,12 +28,7 @@ export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${measurementId}', {
-            send_page_view: true,
-            anonymize_ip: true,
-            allow_google_signals: false,
-            allow_ad_personalization_signals: false
-          });
+          gtag('config', '${measurementId}');
         `}
       </Script>
     </>

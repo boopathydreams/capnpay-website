@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { StructuredData } from "@/components/seo/structured-data";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -115,6 +116,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="font-sans antialiased">
+        <GoogleAnalytics measurementId="G-6JCXQVDM39" />
         <StructuredData />
         <ThemeProvider>
           {children}
