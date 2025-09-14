@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://capnpay.app'
+  const baseUrl = 'https://landing.capnpay.com'
 
   return [
     {

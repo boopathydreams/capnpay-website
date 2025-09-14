@@ -36,11 +36,11 @@ export const metadata: Metadata = {
     "payment app",
     "fintech AI"
   ].join(", "),
-  authors: [{ name: "Cap'n Pay Team", url: "https://capnpay.app" }],
+  authors: [{ name: "Cap'n Pay Team", url: "https://landing.capnpay.com"}],
   creator: "Cap'n Pay",
   publisher: "Cap'n Pay",
   category: "Finance",
-  metadataBase: new URL("https://capnpay.app"),
+  metadataBase: new URL("https://landing.capnpay.com"),
   alternates: {
     canonical: "/",
   },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cap'n Pay - India's First AI-Native Payment App",
     description: "Experience the future of payments with AI-powered insights, voice commands, and seamless UPI transactions. Smart budget caps and safe-to-spend AI for better financial health.",
-    url: "https://capnpay.app",
+    url: "https://landing.capnpay.com",
     siteName: "Cap'n Pay",
     locale: "en_IN",
     type: "website",

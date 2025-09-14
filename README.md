@@ -194,8 +194,8 @@ This project is proprietary to Cap'n Pay. All rights reserved.
 
 For questions or support, please contact:
 
-- Email: [support@capnpay.app](mailto:support@capnpay.app)
-- Website: [https://capnpay.app](https://capnpay.app)
+- Email: [support@landing.capnpay.com](mailto:support@landing.capnpay.com)
+- Website: [https://landing.capnpay.com](https://landing.capnpay.com)
 
 ---
 

@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         '/private/',
       ],
     },
-    sitemap: 'https://capnpay.app/sitemap.xml',
+    sitemap: 'https://landing.capnpay.com/sitemap.xml',
   }
 }

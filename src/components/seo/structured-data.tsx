@@ -7,8 +7,8 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Cap'n Pay",
-    "url": "https://capnpay.app",
-    "logo": "https://capnpay.app/images/icon.png",
+    "url": "https://landing.capnpay.com",
+    "logo": "https://landing.capnpay.com/images/icon.png",
     "description": "India's First AI-Native Payment App with smart budget caps, safe-to-spend AI, and voice commands for seamless UPI transactions.",
     "sameAs": [
       "https://twitter.com/capnpay",
@@ -52,7 +52,7 @@ export function StructuredData() {
       "https://apps.apple.com/app/capnpay",
       "https://play.google.com/store/apps/details?id=com.capnpay"
     ],
-    "screenshot": "https://capnpay.app/images/app-screenshot.png",
+    "screenshot": "https://landing.capnpay.com/images/app-screenshot.png",
     "featureList": [
       "Safe-to-Spend AI",
       "Smart Budget Caps",
