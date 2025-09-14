@@ -62,13 +62,13 @@ export const metadata: Metadata = {
         width: 1248,
         height: 832,
         alt: "Cap'n Pay - India's First AI-Native Payment App - An ultimatum to unhealthy spending",
-      },
-      {
-        url: "/images/icon.png",
-        width: 512,
-        height: 512,
-        alt: "Cap'n Pay Logo",
-      },
+      }
+      // {
+      //   url: "/images/icon.png",
+      //   width: 512,
+      //   height: 512,
+      //   alt: "Cap'n Pay Logo",
+      // },
     ],
   },
   twitter: {
