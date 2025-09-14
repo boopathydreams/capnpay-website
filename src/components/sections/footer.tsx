@@ -161,6 +161,8 @@ const Footer = () => {
                   <motion.a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-300 group"
