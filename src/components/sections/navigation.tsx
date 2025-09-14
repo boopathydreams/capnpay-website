@@ -1,17 +1,16 @@
 "use client"
 
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { Menu, X, Smartphone, Zap, Shield, Brain } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useTheme } from 'next-themes'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,8 +45,14 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-lg lg:text-xl">₹</span>
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg p-1">
+              <Image
+                src="/images/icon.png"
+                alt="Cap'n Pay Logo"
+                width={32}
+                height={32}
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Cap&apos;n Pay
@@ -73,9 +78,6 @@ const Navigation = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="ghost" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-              {theme === 'dark' ? '☀️' : '🌙'}
-            </Button>
             <Button variant="outline" className="border-blue-200 hover:bg-blue-50">
               Sign In
             </Button>
