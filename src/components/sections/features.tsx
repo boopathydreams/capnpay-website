@@ -208,7 +208,7 @@ const FeaturesSection = () => {
                       scale: activeDemo === feature.id ? 1.02 : 1,
                       opacity: activeDemo === feature.id ? 1 : 0.8
                     }}
-                    className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4 font-mono text-sm"
+                    className="bg-gray-100 dark:bg-gray-700/50 rounded-xl p-4 font-mono text-sm"
                   >
                     <div className="flex items-center space-x-2 mb-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>

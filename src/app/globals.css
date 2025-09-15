@@ -1,5 +1,5 @@
+@config "../../tailwind.config.js";
 @import "tailwindcss";
-
 
 :root {
   --background: #ffffff;
@@ -43,12 +43,12 @@
 }
 
 * {
-  border-color: hsl(var(--border));
+  border-color: var(--border);
 }
 
 body {
-  color: hsl(var(--foreground));
-  background: hsl(var(--background));
+  color: var(--foreground);
+  background: var(--background);
   font-family: system-ui, sans-serif;
 }
 
