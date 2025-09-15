@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { Menu, X, Smartphone, Zap, Shield, Brain } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -110,7 +111,8 @@ const Navigation = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="outline" className="border-blue-200 hover:bg-blue-50">
+            <ThemeToggle />
+            <Button variant="outline" className="border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-900/50">
               Sign In
             </Button>
             <Button variant="glow" className="shadow-blue-500/25">
@@ -119,7 +121,8 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -183,6 +186,10 @@ const Navigation = () => {
                   </motion.button>
                 ))}
                 <div className="flex flex-col space-y-3 pt-4 border-t border-border/50">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium text-muted-foreground">Theme</span>
+                    <ThemeToggle />
+                  </div>
                   <Button variant="outline" className="justify-start">
                     Sign In
                   </Button>
