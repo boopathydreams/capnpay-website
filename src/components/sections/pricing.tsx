@@ -92,7 +92,7 @@ const PricingSection = () => {
   }
 
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <section id="pricing" className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-10 blur-3xl" />
@@ -109,32 +109,32 @@ const PricingSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-blue-900/50 text-blue-200 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-blue-800/30">
+          <div className="inline-flex items-center space-x-2 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-blue-200 dark:border-blue-800/30">
             <Sparkles className="w-4 h-4" />
             <span>Simple & Transparent Pricing</span>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Choose your
             <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               perfect plan
             </span>
           </h2>
 
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Start free and upgrade as you grow. All plans include bank-grade security,
             24/7 support, and our AI-powered smart features.
           </p>
 
           {/* Billing Toggle */}
           <div className="flex items-center justify-center mt-8 space-x-4">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-white' : 'text-gray-400'}`}>
+            <span className={`text-sm font-medium ${!isAnnual ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-400'}`}>
               Monthly
             </span>
             <motion.button
               onClick={() => setIsAnnual(!isAnnual)}
               className={`relative w-14 h-8 rounded-full p-1 transition-colors duration-300 ${
-                isAnnual ? 'bg-blue-600' : 'bg-gray-600'
+                isAnnual ? 'bg-blue-600' : 'bg-gray-400 dark:bg-gray-600'
               }`}
             >
               <motion.div
@@ -143,11 +143,11 @@ const PricingSection = () => {
                 className="w-6 h-6 bg-white rounded-full shadow-md"
               />
             </motion.button>
-            <span className={`text-sm font-medium ${isAnnual ? 'text-white' : 'text-gray-400'}`}>
+            <span className={`text-sm font-medium ${isAnnual ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-400'}`}>
               Annual
             </span>
             {isAnnual && (
-              <span className="bg-green-900/50 text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-800/30">
+              <span className="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-200 dark:border-green-800/30">
                 Save up to 25%
               </span>
             )}
@@ -178,10 +178,10 @@ const PricingSection = () => {
                   </div>
                 )}
 
-                <Card className={`h-full p-8 relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border-gray-700/50 ${
+                <Card className={`h-full p-8 relative overflow-hidden bg-white dark:bg-gray-800/50 backdrop-blur-sm border-gray-200 dark:border-gray-700/50 ${
                   plan.popular
                     ? 'border-2 border-blue-500/50 shadow-xl shadow-blue-500/10 scale-105'
-                    : 'border border-gray-700/50 hover:shadow-lg hover:shadow-purple-500/5'
+                    : 'border border-gray-200 dark:border-gray-700/50 hover:shadow-lg hover:shadow-blue-500/5 dark:hover:shadow-purple-500/5'
                 } transition-all duration-300`}>
 
                   {/* Background Gradient */}
@@ -193,27 +193,27 @@ const PricingSection = () => {
                       <plan.icon className="w-8 h-8" />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <p className="text-gray-300 text-sm">{plan.description}</p>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">{plan.description}</p>
                   </div>                  {/* Price */}
                   <div className="text-center mb-8">
                                         <div className="flex items-end justify-center space-x-1">
-                      <span className="text-4xl font-bold text-white">₹{currentPrice}</span>
+                      <span className="text-4xl font-bold text-gray-900 dark:text-white">₹{currentPrice}</span>
                       {currentPrice > 0 && (
-                        <span className="text-gray-400 text-lg mb-1">
+                        <span className="text-gray-600 dark:text-gray-400 text-lg mb-1">
                           /{isAnnual ? 'year' : 'month'}
                         </span>
                       )}
                     </div>
 
                     {isAnnual && savingsPercent > 0 && (
-                      <div className="text-green-400 text-sm font-medium mt-2">
+                      <div className="text-green-600 dark:text-green-400 text-sm font-medium mt-2">
                         Save {savingsPercent}% vs monthly billing
                       </div>
                     )}
 
                     {!isAnnual && plan.price.monthly > 0 && (
-                      <div className="text-gray-400 text-sm mt-2">
+                      <div className="text-gray-600 dark:text-gray-400 text-sm mt-2">
                         or ₹{plan.price.annual}/year
                       </div>
                     )}
@@ -223,16 +223,16 @@ const PricingSection = () => {
                   <div className="space-y-4 mb-8">
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-3">
-                        <div className="flex-shrink-0 w-5 h-5 bg-green-900/50 rounded-full flex items-center justify-center border border-green-800/30">
-                          <Check className="w-3 h-3 text-green-400" />
+                        <div className="flex-shrink-0 w-5 h-5 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center border border-green-200 dark:border-green-800/30">
+                          <Check className="w-3 h-3 text-green-600 dark:text-green-400" />
                         </div>
-                        <span className="text-gray-300 text-sm">{feature}</span>
+                        <span className="text-gray-700 dark:text-gray-300 text-sm">{feature}</span>
                       </div>
                     ))}
 
                     {plan.limitations.map((limitation, limitIndex) => (
                       <div key={limitIndex} className="flex items-center space-x-3 opacity-60">
-                        <div className="flex-shrink-0 w-5 h-5 bg-gray-700 rounded-full flex items-center justify-center">
+                        <div className="flex-shrink-0 w-5 h-5 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
                           <span className="w-3 h-3 text-gray-500">×</span>
                         </div>
                         <span className="text-gray-500 text-sm">{limitation}</span>
@@ -246,7 +246,7 @@ const PricingSection = () => {
                     className={`w-full group ${
                       plan.popular
                         ? ''
-                        : 'border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white'
+                        : 'border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
                     }`}
                   >
                     {plan.name === "Free" ? "Get Started Free" : `Choose ${plan.name}`}
@@ -268,19 +268,19 @@ const PricingSection = () => {
         >
           <div className="grid sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="flex flex-col items-center space-y-2">
-              <Shield className="w-8 h-8 text-blue-400" />
-              <div className="text-2xl font-bold text-white">99.9%</div>
-              <div className="text-gray-300 text-sm">Uptime guaranteed</div>
+              <Shield className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+              <div className="text-2xl font-bold text-gray-900 dark:text-white">99.9%</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm">Uptime guaranteed</div>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <Users className="w-8 h-8 text-purple-400" />
-              <div className="text-2xl font-bold text-white">50K+</div>
-              <div className="text-gray-300 text-sm">Happy customers</div>
+              <Users className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+              <div className="text-2xl font-bold text-gray-900 dark:text-white">50K+</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm">Happy customers</div>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <TrendingUp className="w-8 h-8 text-green-400" />
-              <div className="text-2xl font-bold text-white">₹10Cr+</div>
-              <div className="text-gray-300 text-sm">Processed safely</div>
+              <TrendingUp className="w-8 h-8 text-green-600 dark:text-green-400" />
+              <div className="text-2xl font-bold text-gray-900 dark:text-white">₹10Cr+</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm">Processed safely</div>
             </div>
           </div>
         </motion.div>
@@ -293,13 +293,13 @@ const PricingSection = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <Card className="p-8 bg-gradient-to-br from-gray-900 to-gray-800 text-white border-gray-700">
+          <Card className="p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white border-gray-200 dark:border-gray-700">
             <h3 className="text-2xl font-bold mb-4">Need something bigger?</h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               We offer custom enterprise solutions with dedicated support,
               advanced integrations, and volume pricing for large organizations.
             </p>
-            <Button variant="outline" className="border-gray-600 text-white hover:bg-gray-700">
+            <Button variant="outline" className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
               Contact Sales
             </Button>
           </Card>

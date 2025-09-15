@@ -70,7 +70,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
@@ -85,7 +85,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="py-16 border-b border-gray-800"
+          className="py-16 border-b border-gray-200 dark:border-gray-800"
         >
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -94,7 +94,7 @@ const Footer = () => {
                 your payments?
               </span>
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
               Join 50,000+ users who have already transformed their financial experience with Cap&apos;n Pay.
               Download now and get ₹100 cashback on your first transaction!
             </p>
@@ -104,7 +104,7 @@ const Footer = () => {
                 Download for Android
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 hover:bg-gray-800 group">
+              <Button size="lg" variant="outline" className="border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 group">
                 <Smartphone className="w-5 h-5 mr-2" />
                 Download for iOS
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -134,23 +134,23 @@ const Footer = () => {
                 </span>
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                 India&apos;s first AI-native payment app that makes digital transactions effortless,
                 secure, and intelligent. Experience the future of payments today.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3 mb-6">
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-blue-400" />
+                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                  <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span>hello@capnpay.com</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-blue-400" />
+                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                  <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span>+91 90803 42654</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-blue-400" />
+                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                  <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span>Bangalore, India</span>
                 </div>
               </div>
@@ -165,9 +165,9 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                    className="w-10 h-10 bg-gray-200 dark:bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-300 group"
                   >
-                    <social.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                    <social.icon className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors" />
                   </motion.a>
                 ))}
               </div>
@@ -183,7 +183,7 @@ const Footer = () => {
                 viewport={{ once: true }}
                 className="lg:col-span-1"
               >
-                <h3 className="text-lg font-semibold mb-4 capitalize text-white">
+                <h3 className="text-lg font-semibold mb-4 capitalize text-gray-900 dark:text-white">
                   {category}
                 </h3>
                 <ul className="space-y-3">
@@ -191,7 +191,7 @@ const Footer = () => {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
+                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 text-sm"
                       >
                         {link.label}
                       </a>
@@ -209,13 +209,13 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="py-8 border-t border-gray-800"
+          className="py-8 border-t border-gray-200 dark:border-gray-800"
         >
           <div className="flex flex-wrap justify-center items-center gap-8">
-            <span className="text-gray-400 text-sm font-medium">Trusted & Certified:</span>
+            <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">Trusted & Certified:</span>
             {certifications.map((cert) => (
-              <div key={cert.label} className="flex items-center space-x-2 text-gray-300">
-                <cert.icon className="w-5 h-5 text-green-400" />
+              <div key={cert.label} className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                <cert.icon className="w-5 h-5 text-green-600 dark:text-green-400" />
                 <span className="text-sm">{cert.label}</span>
               </div>
             ))}
@@ -228,16 +228,16 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="py-8 border-t border-gray-800"
+          className="py-8 border-t border-gray-200 dark:border-gray-800"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 text-gray-400 text-sm mb-4 md:mb-0">
+            <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 text-sm mb-4 md:mb-0">
               <span>© {currentYear} Cap&apos;n Pay. Made with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
               <span>in India</span>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
+            <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
               <span>All rights reserved</span>
               <div className="flex items-center space-x-1">
                 <span>Version 2.1.0</span>
