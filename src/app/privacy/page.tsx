@@ -212,6 +212,23 @@ export default function PrivacyPolicyPage() {
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               To exercise these rights, contact us at info@capnpay.com or through the app settings.
             </p>
+            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+              <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">
+                Request Data Deletion
+              </h3>
+              <p className="text-blue-800 dark:text-blue-400 mb-3">
+                You can request permanent deletion of all your personal data from our systems.
+              </p>
+              <a
+                href="/data-deletion"
+                className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+              >
+                Request Data Deletion
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </section>
 
           {/* Permissions */}
