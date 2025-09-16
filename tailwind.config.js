@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const config = {
   // Use class-based dark mode so the theme toggle works
   darkMode: 'class',
   content: [
@@ -11,4 +11,6 @@ export default {
     extend: {},
   },
   plugins: [],
-}
+};
+
+export default config;
