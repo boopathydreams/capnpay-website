@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
@@ -47,8 +48,6 @@ const Navigation = () => {
         behavior: 'smooth'
       })
     }
-
-    setIsOpen(false)
   }
 
   const scrollToTop = () => {
@@ -86,27 +85,26 @@ const Navigation = () => {
       )}
     >
       <Container>
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-3 cursor-pointer group"
+          <motion.button
+            whileHover={{ scale: 1.05 }}
             onClick={scrollToTop}
+            className="flex items-center space-x-2 cursor-pointer"
           >
-            <div className="relative w-10 h-10 md:w-12 md:h-12">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl opacity-90 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute inset-0.5 bg-white dark:bg-gray-900 rounded-lg flex items-center justify-center">
-                <Smartphone className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />
-              </div>
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg p-1">
+              <Image
+                src="/images/icon.png"
+                alt="Cap'n Pay Logo"
+                width={32}
+                height={32}
+                className="w-full h-full object-contain"
+              />
             </div>
-            <div>
-              <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Cap&apos;n Pay
-              </h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">AI-Native Payments</p>
-            </div>
-          </motion.div>
+            <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Cap&apos;n Pay
+            </span>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -134,25 +132,16 @@ const Navigation = () => {
             <Button variant="glow" className="shadow-blue-500/25">
               Download App
             </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleLogout}
-              className="text-red-600 border-red-200 hover:bg-red-50 dark:border-red-800 dark:hover:bg-red-900/50"
-            >
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-3">
+          <div className="lg:hidden flex items-center space-x-2">
             <ThemeToggle />
             <Button
               variant="ghost"
-              size="sm"
+              size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="relative p-2"
+              className="relative z-50"
             >
               <AnimatePresence mode="wait">
                 {isOpen ? (
@@ -199,7 +188,22 @@ const Navigation = () => {
                     key={item.name}
                     onClick={() => {
                       scrollToSection(item.href)
-                      setIsOpen(false)
+                          setIsOpen(false)
+  }
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/logout', {
+        method: 'POST',
+      })
+      // Redirect to login page
+      window.location.href = '/login'
+    } catch (error) {
+      console.error('Logout error:', error)
+      // Force redirect even if API call fails
+      window.location.href = '/login'
+    }
+  }
                     }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -220,14 +224,6 @@ const Navigation = () => {
                   </Button>
                   <Button variant="glow" className="justify-start">
                     Download App
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="justify-start text-red-600 border-red-200 hover:bg-red-50 dark:border-red-800 dark:hover:bg-red-900/50"
-                    onClick={handleLogout}
-                  >
-                    <LogOut className="w-4 h-4 mr-2" />
-                    Logout
                   </Button>
                 </div>
               </div>
